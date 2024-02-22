@@ -3,7 +3,7 @@ The Aesthetics Evaluator is based on the LAION Aesthetics Predictor V2. Source: 
 
 Findings: 
 * Using a greater population size is recommended to allow for variation in the population
-* Mutation should be restricted to a reasonable CLAMP range
+* Mutation should be restricted to a reasonable CLAMP range. When these values are exceeded the generational model produces weird results. 
 * Arithmetic Crossover works well with default configuration and 0.5
 * Elitism helped in exploitation, otherwise good results would have gotten lost 
 
@@ -32,6 +32,8 @@ mutator = PooledUniformGaussianMutator(mutation_arguments, mutation_arguments_po
 selector = TournamentSelector(tournament_size=3)
 ```
 
+[View the full notebook](./ga_200gen_100pop_aesthetic.ipynb)
+
 ## Optimizing a GA for Minimum Aesthetics with SDXL Turbo
 Optimizing the aesthetics predictor as a minimization problem, the algorithm came to a min Aesthetics score of **0.457**. Similar to above
 this was able to beat any real image from the dataset.
@@ -55,3 +57,5 @@ mutation_arguments_pooled = UniformGaussianMutatorArguments(mutation_rate=0.1, m
 mutator = PooledUniformGaussianMutator(mutation_arguments, mutation_arguments_pooled)
 selector = TournamentSelector(tournament_size=3)
 ```
+
+[View the full notebook](./ga_200gen_100pop_invaesthetic.ipynb)
