@@ -8,7 +8,7 @@ A wide variety of prompts (inspired by parti prompts) was used for the initial p
 
 Video | Fitness Chart
 :-: | :-:
-<video src='./ga_200gen_100pop_aesthetic.mp4' width=800/> | ![Ga200Gen100PopFitnessChart](./ga_200gen_100pop_aesthetic.png)
+https://github.com/malthee/evolutionary-diffusion-results/blob/main/aesthetics/ga_200gen_100pop_aesthetic.mp4 | ![Ga200Gen100PopFitnessChart](./ga_200gen_100pop_aesthetic.png)
 
 Arguments: 
 ```python
