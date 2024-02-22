@@ -6,22 +6,11 @@ Optimizing the aesthetics predictor as a maximization problem, the algorithm cam
 This score is higher than [the examples from the real LAION English Subset dataset have](http://captions.christoph-schuhmann.de/aesthetic_viz_laion_sac+logos+ava1-l14-linearMSE-en-2.37B.html).
 A wide variety of prompts (inspired by parti prompts) was used for the initial population.
 
-try video embedding todo remove
-
 https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/4841d671-639a-4ac4-b7a8-ee5a66fab28d
 
-<video src="./ga_200gen_100pop_aesthetic.png"></video>
+![Ga200Gen100PopFitnessChart](./ga_200gen_100pop_aesthetic.png)
 
-https://github.com/malthee/evolutionary-diffusion-results/blob/main/aesthetics/ga_200gen_100pop_aesthetic.mp4
-
-<video src="https://github.com/malthee/evolutionary-diffusion-results/blob/main/aesthetics/ga_200gen_100pop_aesthetic.mp4"></video>
-
-
-Video | Fitness Chart
-:-: | :-:
-https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/4841d671-639a-4ac4-b7a8-ee5a66fab28d | ![Ga200Gen100PopFitnessChart](./ga_200gen_100pop_aesthetic.png)
-
-Arguments: 
+Parameters: 
 ```python
 population_size = 100
 num_generations = 200
@@ -39,3 +28,7 @@ selector = TournamentSelector(tournament_size=3)
 
 ## Optimizing a GA for Minimum Aesthetics with SDXL Turbo
 ...
+
+
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/4352cdc0-20d6-4547-864d-e174f52204f3
+
