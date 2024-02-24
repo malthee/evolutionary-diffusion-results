@@ -63,7 +63,7 @@ selector = TournamentSelector(tournament_size=3)
 ## Optimizing a GA for Maximum Aesthetics with SD Turbo 
 Trying out a similar experiment with comparable parameters switching out SDXL for SD Turbo. This resulted in a final score of **7.9**, which is lower than its SDXL variant. 
 
-TODO video
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/549f3536-1b2f-4732-9e45-0f6a57ebd34c
 
 ![SDGa200Gen100PopFitnessChartAesthetics](./sd_ga_200gen_100pop_aesthetic.png)
 
