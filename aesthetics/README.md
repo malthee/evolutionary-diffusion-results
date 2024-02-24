@@ -43,7 +43,7 @@ https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/4352cd
 ![Ga200Gen100PopFitnessChartInvaesthetics](./ga_200gen_100pop_invaesthetic.png)
 
 Parameters:
-```
+```python
 population_size = 100
 num_generations = 200
 batch_size = 1
@@ -59,3 +59,28 @@ selector = TournamentSelector(tournament_size=3)
 ```
 
 [View the full notebook](./ga_200gen_100pop_invaesthetic.ipynb)
+
+## Optimizing a GA for Maximum Aesthetics with SD Turbo 
+Trying out a similar experiment with comparable parameters switching out SDXL for SD Turbo. This resulted in a final score of **7.9**, which is lower than its SDXL variant. 
+
+TODO video
+
+![SDGa200Gen100PopFitnessChartAesthetics](./sd_ga_200gen_100pop_aesthetic.png)
+
+Parameters
+```python
+population_size = 100
+num_generations = 200
+batch_size = 1
+elitism = 1
+inference_steps = 3
+
+creator = SDPromptEmbeddingImageCreator(pipeline_factory=setup_pipeline, batch_size=batch_size, inference_steps=inference_steps)
+evaluator = AestheticsImageEvaluator() 
+crossover = ArithmeticCrossover(0.5)
+mutation_arguments = UniformGaussianMutatorArguments(mutation_rate=0.1, mutation_strength=0.4, clamp_range=(-10.3, 15.65)) 
+mutator = UniformGaussianMutator(mutation_arguments)
+selector = TournamentSelector(tournament_size=3)
+```
+
+[View the full notebook](./sd_ga_200gen_100pop_aesthetic.ipynb)
