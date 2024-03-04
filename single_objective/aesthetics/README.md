@@ -90,9 +90,10 @@ selector = TournamentSelector(tournament_size=3)
 
 ## Optimizing an Island-GA with Different Artists for Aesthetics and SDXL Turbo
 Starting each island with random prompt embeddings combined with embeddings of an artist (e.g. Picasso, Van Gogh, etc.) and optimizing for aesthetics with SDXL Turbo. The aesthetics score reached around **7.3** but the results were much more diverse than when focussing straight on aesthetics score.  
-Diversity on the islands was lost after few migrations.
+Diversity on the islands was lost after few migrations.  
+* For the Island-GA intermediate results are more interesting, than the best results. 
 
-TODO video
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/c51eb117-1371-45ee-8025-fa22736f9880
 
 ![IslandGa100Gen200PopFitnessChartAesthetics](./island_ga_100gen_200pop_randomartists.png)
 
@@ -177,7 +178,7 @@ Used RouletteWheelSelection and reduced Mutation to combat the loss of original 
 Aesthetics seemed to improve for a bit, but then through missing pressure dropped until images were not really usable anymore.  
 Removed artists with similar style or period for diversity.
 
-TODO Video
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/ffcdab38-072d-41de-9579-8065e58eaf45
 
 ![IslandGa170Pop100GenLowPressure](./island_ga_100gen_170pop_randomartists_lowpressure.png)
 
@@ -258,7 +259,7 @@ island_model = IslandModel(
 Tried Uniform Crossover and RankSelection to see if it combats the problem of aesthetics loss.  
 In comparison it got a little bit better and it *only* reached 4.3 at the end while the other one reached around 4. Still the artist styles were lost in the end with images not being usable anymore.
 
-TODO Video
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/0a62006d-4c5d-4c78-81cf-8f47c15999a1
 
 ![IslandGa100Gen170PopMidPressure](./island_ga_100gen_170pop_randomartists_midpressure.png)
 
