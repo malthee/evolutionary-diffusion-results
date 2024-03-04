@@ -9,8 +9,6 @@ Findings:
 ## Optimizing with NSGA II, starting with single Prompt
 Optimizing the aesthetics and CLIP-Score predictors as a multi-objective problem, the algorithm came to a max Aesthetics score 
 
-TODO video
-
 | Aesthetics | CLIP-Score |
 | --- | --- |
 | ![AestheticsCLIPScore](./nsga_100gen_100pop_aesthetics.png) | ![AestheticsCLIPScore](./nsga_100gen_100pop_clipscore.png) |
