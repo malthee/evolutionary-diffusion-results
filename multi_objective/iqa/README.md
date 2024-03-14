@@ -9,6 +9,8 @@ Findings:
 Using SDXL and the SDXL detector it is shown that it is indeed possible to fool the detector into thinking a generated image
 is 100% human.
 
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/a0828dc2-248c-44b1-8cac-1cbabbbe238d
+
 ![NSGA II for 9 metrics](./nsga_200gen_100pop_iqavariation.png)
 
 Parameters
