@@ -1,12 +1,15 @@
 # Multi-Objective Optimization for Metrics in CLIP Image Quality Assessment
-* CLIP-IQA https://lightning.ai/docs/torchmetrics/stable/multimodal/clip_iqa.html
+CLIP-IQA https://lightning.ai/docs/torchmetrics/stable/multimodal/clip_iqa.html
 
 Findings:
 * It is possible to optimize for multiple metrics at once
 * The results are interesting, may not be exactly what you expect
 
 ## Optimizing with NSGA II for 9 metrics, starting with Random Embeddings
+Using SDXL and the SDXL detector it is shown that it is indeed possible to fool the detector into thinking a generated image
+is 100% human.
 
+![NSGA II for 9 metrics](./nsga_200gen_100pop_iqavariation.png)
 
 Parameters
 ```python
@@ -35,7 +38,7 @@ init_args = [PooledPromptEmbedData(embedding_range.random_tensor_in_range(), poo
 nsga = NSGA_II(
     num_generations=num_generations,
     population_size=population_size,
-    solution_creator=creator,
+    solution_creator=creator,   
     selector=selector,
     crossover=crossover,
     mutator=mutator,
@@ -44,7 +47,6 @@ nsga = NSGA_II(
     initial_arguments=init_args,
     post_non_dominated_sort_callback=save_images_post_sort
 )
-
 ```
 
-[View the full notebook](./nsga_100gen_100pop_aes_clips.ipynb)
+[View the full notebook](./nsga_200gen_100pop_iqavariation.ipynb)
