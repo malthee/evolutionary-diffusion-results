@@ -5,7 +5,7 @@ CLIP-Score https://lightning.ai/docs/torchmetrics/stable/multimodal/clip_score.h
 Initializing the population with random embeddings and measuring fitness with CLIP-Score containing the prompt.  
 **Prompt:** "surreal simulation of the universe, fantasy crazy unimaginable 4k high quality ultra hd beautiful"
 
-TODO video
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/e088cd7c-4904-41d2-b4ff-bdfb3066edc1
 
 ![CLIPPromptOptimization](./ga_100gen_200pop_surreal.png)
 
@@ -59,7 +59,7 @@ The optimized image is a bit more colorful and fits the CLIP-Score a few points 
 ## Trying to Optimize for "Aesthetics" by using the CLIP-Score
 The idea is to use the CLIP-Score as a fitness function to optimize for aesthetics by defining the prompt as "aesthetic".
 
-TODO video
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/e6e0c419-2768-41eb-9f75-c2d47e5a8d92
 
 Parameters
 ```python
