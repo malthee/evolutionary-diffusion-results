@@ -6,7 +6,7 @@ Variants:
 
 ## Trying to create random images not detected as AI
 
-TODO video
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/5e4f948c-9924-40d8-8ede-fab570cbe8ce
 
 Parameters
 ```python
