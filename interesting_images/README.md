@@ -4,7 +4,7 @@ The following are results that I picked across all experiments which I have foun
 ## Island GA with Aesthetics
 Experiment of combining random prompt embeddings with weighted artist or epoch embeddings. Images come from different generations of the algorithm. The goal was to simulate evolution of style with influence from different artists or epochs. 
 
-The results show a diverse range of images. Notebooks for the experiments are located in [this folder](./notebooks).
+The results show a diverse range of images. Notebooks and parameters for the experiments are located in [this folder](./notebooks).
 
 |                                                       |                                                        |                                                        |                                                        |
 | ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
