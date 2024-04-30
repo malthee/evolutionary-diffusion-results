@@ -1,10 +1,10 @@
 # Interesting Image Results across all Experiments
-The following are results that I picked across all Experiments which I have found interesting.
+The following are results that I picked across all experiments which I have found interesting. Images were generated with SDXL-Turbo.
 
 ## Island GA with Aesthetics
-Experiment of combining random prompt embeddings with weighted artist or epoch embeddings. Images come from different generations of the algorithm. 
+Experiment of combining random prompt embeddings with weighted artist or epoch embeddings. Images come from different generations of the algorithm. The goal was to simulate evolution of style with influence from different artists or epochs. 
 
-The results show a diverse range of images, escaping the artist's and epoch style and creating something new.
+The results show a diverse range of images. Notebooks for the experiments are located in [this folder](./notebooks).
 
 |                                                       |                                                        |                                                        |                                                        |
 | ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
