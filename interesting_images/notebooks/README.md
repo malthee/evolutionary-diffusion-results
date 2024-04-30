@@ -3,7 +3,7 @@ This folder is dedicated to the notebooks that were used to run the Island GA ex
 
 ## Artists on Islands
 
-## Epochs on Islandsw
+## Epochs on Islands
 
 ## Artist Works on Islands
 
