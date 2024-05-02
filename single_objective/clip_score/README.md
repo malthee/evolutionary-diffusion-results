@@ -6,7 +6,7 @@ Findings:
 * It is also possible to find from an artist embedding to another artist embedding
 * Both scoring as well or better than directly generated images
 * CLIPScore optimization tends to go to the extremes in image composition, directly generating by prompt is more balanced
-* The scoring and g
+* The scoring and style direction strongly depends on the CLIP model chosen
 
 ## Trying to "Find" a Prompt from Random Embeddings
 Initializing the population with random embeddings and measuring fitness with CLIP-Score containing the prompt.  
