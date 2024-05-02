@@ -101,5 +101,5 @@ init_args = [init_crossover.crossover(initial_prompt_arg,
                  for _ in range(population_size)]
 ```
 
-[View the full notebook](./ga_aidetection_monster)
+[View the full notebook](./ga_aidetection_monster.ipynb)
 
