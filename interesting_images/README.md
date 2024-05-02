@@ -1,5 +1,5 @@
-# Interesting Image Results across all Experiments
-The following are results that I picked across all experiments which I have found interesting. Images were generated with SDXL-Turbo.
+# Interesting Image Results across all Island Model Experiments - Dedicated to Artistic Exploration
+The following are results that I picked across all experiments which I have found interesting. Images were generated with SDXL-Turbo with a Island Model driving multiple GAs of Artists, Epochs, Works etc.
 
 ## Island GA with Aesthetics
 Experiment of combining random prompt embeddings with weighted artist or epoch embeddings. Images come from different generations of the algorithm. The goal was to simulate evolution of style with influence from different artists or epochs. 
