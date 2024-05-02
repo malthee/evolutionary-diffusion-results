@@ -122,9 +122,17 @@ base-16:
 
 https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/7b77cb1b-52d7-4522-873f-86b5d86e5535
 
+[View the full notebook](./davinci_banksy_vit14.ipynb)
+
 large-14:  
 
 https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/b6b7e357-9c92-4978-9ad5-816965693375
+
+[View the full notebook](./davinci_banksy_vit14.ipynb)
+
+Comparison to direct prompt "by Banksy":  
+<img width="300" alt="sdxl_bybanksy" src="https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/c4f58057-c10c-46d1-a60e-8562c0025a3a">
+
 
 ```python
 population_size = 100
