@@ -6,9 +6,7 @@ Findings:
 * Mutation should be restricted to a reasonable CLAMP range. When these values are exceeded the generational model produces weird results. 
 * Arithmetic Crossover works well with default configuration and 0.5 crossover rate.
 * Elitism helped in exploitation, otherwise good results would have gotten lost 
-* Island GA 
-    * Tends to lose diversity on islands quickly when selection pressure is high
-    * With less selection pressure improves to a certain extent then drops in fitness 
+* Optimization for a speficic prompt works well when reducing the initial prompt search space and reducing mutation. May still lead to loss of some prompt components.
 
 ## Optimizing a GA for Maximum Aesthetics with SDXL Turbo
 Optimizing the aesthetics predictor as a maximization problem, the algorithm came to a max Aesthetics score of **8.67**.
@@ -63,6 +61,50 @@ selector = TournamentSelector(tournament_size=3)
 
 [View the full notebook](./ga_200gen_100pop_invaesthetic.ipynb)
 
+## Optimizing Aesthetics for a specific Prompt
+Another use case is to improve aesthetics for a specific prompt. This can be done by starting in a restricted search space - such as one defined by 99% by the prompt and 1% random and then search from there on.
+
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/17f09800-3346-4eb9-9834-e71f3f29b250
+
+![prompt specific aesthetics improvement](https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/4319d6d0-ec0b-44d0-8ccc-82ad291d9ddc)
+
+```python
+population_size = 50
+num_generations = 100
+batch_size = 1
+elitism = 1
+inference_steps = 4
+crossover_proportion = 0.8
+crossover_rate = 0.9
+mutation_rate = 0.2
+strict_osga = False
+prompt = "a cozy flat with a fireplace, a dog and cat sleeping on the couch"
+
+# Define min/max values for the prompt embeddings
+embedding_range = SDXLTurboEmbeddingRange()
+pooled_embedding_range = SDXLTurboPooledEmbeddingRange()
+
+creator = SDXLPromptEmbeddingImageCreator(batch_size=batch_size, inference_steps=inference_steps)
+evaluator = AestheticsImageEvaluator()
+crossover = PooledArithmeticCrossover(interpolation_weight=0.5, interpolation_weight_pooled=0.5, 
+                                      proportion=crossover_proportion, proportion_pooled=crossover_proportion)
+mutation_arguments = UniformGaussianMutatorArguments(mutation_rate=0.05, mutation_strength=1, 
+                                                     clamp_range=(embedding_range.minimum, embedding_range.maximum)) 
+mutation_arguments_pooled = UniformGaussianMutatorArguments(mutation_rate=0.05, mutation_strength=0.2, 
+                                                            clamp_range=(pooled_embedding_range.minimum, pooled_embedding_range.maximum))
+mutator = PooledUniformGaussianMutator(mutation_arguments, mutation_arguments_pooled)
+selector = TournamentSelector(tournament_size=3)
+
+# Prepare initial arguments, random population of *reasonable* prompt embeddings
+init_args = [PooledPromptEmbedData(embedding_range.random_tensor_in_range(), pooled_embedding_range.random_tensor_in_range()) 
+                 for _ in range(population_size)]
+init_crossover = PooledArithmeticCrossover(0.99, 0.99)
+prompt_args = creator.arguments_from_prompt(prompt)
+init_args = [init_crossover.crossover(prompt_args, args) for args in init_args]
+```
+
+[View the full notebook](./ga_aesthetics_restricted.ipynb)
+
 ## Optimizing a GA for Maximum Aesthetics with SD Turbo 
 Trying out a similar experiment with comparable parameters switching out SDXL for SD Turbo. This resulted in a final score of **7.9**, which is lower than its SDXL variant. 
 
@@ -86,4 +128,12 @@ mutator = UniformGaussianMutator(mutation_arguments)
 selector = TournamentSelector(tournament_size=3)
 ```
 
+
 [View the full notebook](./sd_ga_200gen_100pop_aesthetic.ipynb)
+
+## OSGA Random Optimization
+A strict OSGA approach was tried out, so that only better offspring are accepted. This lead to similar results than normal GA with more time invested, but less generations. (38 Hours, Fitness just over 8, 11 Generations)
+
+https://github.com/malthee/evolutionary-diffusion-results/assets/18032233/fdddd57d-bec0-4a78-9234-4bcc9e5f99bb
+
+[View the full notebook](./osga_aesthetics.ipynb)
